@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Room Monitoring</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Server Room Monitoring</h1>
+    </header>
+    <main>
+        <section id="sensor-data">
+            <h2>Sensor Data</h2>
+            <p><strong>Temperature:</strong> <span id="temperature">Loading...</span> °C</p>
+            <p><strong>Humidity:</strong> <span id="humidity">Loading...</span> %</p>
+        </section>
+
+        <section id="chart">
+            <h2>Sensor History</h2>
+            <canvas id="sensorChart" width="400" height="200"></canvas>
+        </section>
+
+        <section id="analysis">
+            <h2>Data Analysis</h2>
+            <p><strong>Average Temperature:</strong> <span id="avg-temp">Loading...</span> °C</p>
+            <p><strong>Maximum Temperature:</strong> <span id="max-temp">Loading...</span> °C</p>
+            <p><strong>Minimum Temperature:</strong> <span id="min-temp">Loading...</span> °C</p>
+            <p><strong>Average Humidity:</strong> <span id="avg-hum">Loading...</span> %</p>
+            <p><strong>Maximum Humidity:</strong> <span id="max-hum">Loading...</span> %</p>
+            <p><strong>Minimum Humidity:</strong> <span id="min-hum">Loading...</span> %</p>
+        </section>
+
+        <section id="sensor-history">
+            <h2>Sensor History Table</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Timestamp</th>
+                        <th>Temperature (°C)</th>
+                        <th>Humidity (%)</th>
+                    </tr>
+                </thead>
+                <tbody id="history-table-body">
+                    <!-- Data will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </section>
+
+        <section id="alerts">
+            <h2>Alerts</h2>
+            <p id="flame-alert" class="hidden">🔥 Flame Detected!</p>
+        </section>
+
+        <section id="controls">
+            <h2>Controls</h2>
+            <label for="buzzer-status">Buzzer:</label>
+            <select id="buzzer-status">
+                <option value="1">ON</option>
+                <option value="0">OFF</option>
+            </select>
+            <button id="update-buzzer">Update Buzzer Status</button>
+        </section>
+
+        <section id="authorized-cards">
+            <h2>Authorized Cards</h2>
+            <ul id="card-list"></ul>
+            <input type="text" id="new-card-uid" placeholder="Enter new card UID">
+            <button id="add-card">Add Card</button>
+        </section>
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-analytics.js";
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1em 0;
+}
+
+main {
+  padding: 2em;
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section {
+  margin-bottom: 2em;
+}
+
+.hidden {
+  display: none;
+}
+
+#flame-alert {
+  color: red;
+  font-weight: bold;
+}
+
+#card-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+#card-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5em;
+  padding: 0.5em;
+  background: #f9f9f9;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+#card-list li button {
+  background: red;
+  color: white;
+  border: none;
+  padding: 0.3em 0.5em;
+  cursor: pointer;
+}
+
+#card-list li button:hover {
+  background: darkred;
+}
+
+input#new-card-uid {
+  width: 70%;
+  padding: 0.5em;
+  margin-right: 0.5em;
+}
+
+/* Chart and Analysis Section Styling */
+#chart {
+  text-align: center;
+}
+
+#sensorChart {
+  max-width: 100%;
+  height: auto;
+  margin: 1em auto;
+}
+
+#analysis {
+  padding: 1em;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#analysis p {
+  margin: 0.5em 0;
+  font-size: 1.1em;
+}
+
+strong {
+  color: #333;
+}
+
+/* Sensor History Table Styling */
+#sensor-history {
+  margin-top: 2em;
+}
+
+#sensor-history table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+}
+
+#sensor-history th,
+#sensor-history td {
+  border: 1px solid #ddd;
+  padding: 0.8em;
+  text-align: center;
+}
+
+#sensor-history th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+#sensor-history tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#sensor-history tbody tr:hover {
+  background-color: #f1f1f1;
+}
